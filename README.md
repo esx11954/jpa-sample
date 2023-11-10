@@ -23,7 +23,7 @@ implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 
 
-# 概要 #
+# JPA概要 #
 JPAとは、Javaで標準的に利用されるAPIの一種で、  
 データの永続的な保管や取り出しを容易にする機能を提供するもの  
 具体的にはオブジェクトの内容をデータベースに保存し、  
