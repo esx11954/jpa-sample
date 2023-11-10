@@ -1,9 +1,11 @@
-# DB環境 # 
+# 環境 # 
 
 データベースのクライアントから以下のクエリを実行して下さい。
 
-```
+```SQL
 CREATE DATABASE IF NOT EXISTS item;
+
+USE item;
 
 CREATE TABLE IF NOT EXISTS item (
   id bigint(20) NOT NULL AUTO_INCREMENT,
@@ -13,14 +15,27 @@ CREATE TABLE IF NOT EXISTS item (
   PRIMARY KEY (id)
 );
 ```
-
-# JPA概要 #
-
 build.gradleのdependenciesに以下を追加
 
-```
+```JAVA
 implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 ```
+
+
+
+# 概要 #
+JPAとは、Javaで標準的に利用されるAPIの一種で、  
+データの永続的な保管や取り出しを容易にする機能を提供するもの  
+具体的にはオブジェクトの内容をデータベースに保存し、  
+必要に応じて取り出してオブジェクトを再構築する技術
+- ソースコードの書きやすさや管理のしやすさ  
+- 基本的にはSQLを記載しないで、DBとJavaオブジェクトを連携できる
+
+
+等のメリットが挙げられるが、複雑な問合せはできないことはないが得意とはしない
+
+
+# 使用方法
 
 ---
 #### Entityクラスを作成する 
@@ -61,8 +76,8 @@ Spring Dataから提供されているインタフェースを継承し、Entity
 
 `@Query`アノテーションを使用する場合は*JPQL*の習得が必要になる
 
-#### 上記の使用方法
-サービスクラスに`@Autowired`でインジェクションし、目的によってメソッドを作成する
+
+
 
 
 
